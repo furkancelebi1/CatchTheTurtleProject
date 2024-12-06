@@ -6,6 +6,7 @@ screen.title("Catch The Turtle")
 font = ("Arial",15,"bold")
 score_turtle = turtle.Turtle()
 #score turtle
+
 def setup_score_turtle():
     score_turtle.color("dark blue")
     score_turtle.ht()
