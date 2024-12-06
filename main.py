@@ -9,12 +9,10 @@ score_turtle = turtle.Turtle()
 grid_size = 15
 x_coordinates = [-20,-10,0,10,20]
 y_coordinates = [20,10,0,-10]
+score = 0
 
 #turtle list
 turtle_list = []
-
-
-
 #score turtle
 def setup_score_turtle():
     score_turtle.color("dark blue")
@@ -28,6 +26,14 @@ def setup_score_turtle():
 
 def make_turtle(x,y):
     t = turtle.Turtle()
+
+    def handle_click(x,y):
+        global score
+        score += 1
+        score_turtle.clear()
+        score_turtle.write(arg=f"Score: {score}", move=False, align="left", font=font)
+
+    t.onclick(handle_click)
     t.penup()
     t.shape("turtle")
     t.shapesize(2,2)
